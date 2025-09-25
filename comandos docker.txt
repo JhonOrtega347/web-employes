@@ -1,0 +1,18 @@
+-- Ejercicio 1 --
+docker volume create mysql_data 
+docker volume ls
+docker network create red_bd
+docker network ls
+docker run -d --rm --name mysql_c --network red_bd -e MYSQL_ROOT_PASSWORD=utec -p 8005:3306 -v mysql_data:/var/lib/mysql mysql:8.0
+
+-- Ejercicio 2 --
+docker run -d --rm --name adminer_c --network red_bd -p 8080:8080 adminer
+
+-- Ejercicio 3 --
+docker build -t api-employees-cors .
+docker run -d --rm --name api-employees-cors_c -p 8000:8000 api-employees-cors
+docker logs api-employees-cors_c
+
+-- Ejercicio 4 --
+docker build -t web-employees .
+docker run -d --rm --name web-employees_c -p 8080:80 web-employees
