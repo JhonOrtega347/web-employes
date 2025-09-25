@@ -4,7 +4,7 @@ Description: "Plantilla para crear una Maquina Virtual en EC2 usando una AMI esp
 Parameters:
   InstanceName:
     Type: String
-    Default: "MV Reemplazar"
+    Default: "MV Bases de datos"
     Description: "Nombre de la instancia a crear"
   AMI:
     Type: String
